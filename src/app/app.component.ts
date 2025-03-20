@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Home } from './models/home';
-import { HomeCardComponent } from './components/home-card/home-card.component';
+import { HomeCardComponent } from './home-card/home-card.component';
+import { Home } from './models/home.type';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HomeCardComponent],
@@ -9,16 +10,18 @@ import { HomeCardComponent } from './components/home-card/home-card.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'angular-homes';
-  mockHome: Home = {
-    id: 1,
-    title: 'Modern Beachfront Villa',
+  title = 'HomeListings';
+
+  home: Home = {
+    title: 'Beautiful Family Home',
     description:
-      'Luxurious beachfront property with amazing ocean views and modern amenities. Perfect for family vacations or retreats.',
-    city: 'Malibu',
+      'Spacious family home with a large backyard and modern amenities.',
+    city: 'San Francisco',
     rooms: 4,
-    bathrooms: 3,
+    bathrooms: 2,
     hasPool: true,
-    picture: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914',
+    picture:
+      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    id: 1,
   };
 }
