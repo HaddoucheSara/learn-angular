@@ -57,7 +57,7 @@ You should see a JSON response with a list of homes.
 ### 1. Generate the Home Card Component
 
 ```bash
-ng generate component components/home-card
+ng generate component components/home-card 
 ```
 
 This creates:
