@@ -1,4 +1,4 @@
-export type Home = {
+export interface Home {
   id?: number;
   title: string;
   description: string;
@@ -7,4 +7,5 @@ export type Home = {
   bathrooms: number;
   hasPool: boolean;
   picture: string;
-};
+  isFavorite?: boolean;
+}
