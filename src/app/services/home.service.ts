@@ -1,5 +1,6 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { finalize } from 'rxjs/operators';
 import { Home } from '../models/home.type';
 // import { Observable } from 'rxjs';
 import { finalize } from 'rxjs';
