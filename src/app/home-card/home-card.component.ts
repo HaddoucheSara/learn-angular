@@ -1,5 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import {
   LucideAngularModule,
   MapPin,
@@ -8,19 +9,18 @@ import {
   Bath,
   Heart,
 } from 'lucide-angular';
-
 import { Home } from '../models/home.type';
 import { CommonModule } from '@angular/common';
 import { HomeService } from '../services/home.service';
+
 @Component({
   selector: 'app-home-card',
-  imports: [LucideAngularModule, FormsModule, CommonModule],
+  imports: [LucideAngularModule, FormsModule, CommonModule, RouterLink],
   templateUrl: './home-card.component.html',
   styleUrl: './home-card.component.css',
 })
 export class HomeCardComponent {
   @Input() home!: Home;
-  // @Output() toggleFavorite = new EventEmitter<number>();
   homeService = inject(HomeService);
   // Icons list
   readonly MapPin = MapPin;
@@ -28,13 +28,8 @@ export class HomeCardComponent {
   readonly BedIcon = Bed;
   readonly BathIcon = Bath;
   readonly Heart = Heart;
-  onFavoriteClick(): void {
-    // if (this.home.id) {
-    //   this.toggleFavorite.emit(this.home.id);
-    // }
-    if (!this.home.id) {
-      return;
-    }
-    this.homeService.toggleFavorite(this.home.id);
+
+  onFavoriteClick() {
+    this.homeService.toggleFavorite(this.home);
   }
 }

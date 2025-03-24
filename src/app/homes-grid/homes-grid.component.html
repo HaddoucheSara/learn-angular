@@ -1,33 +1,6 @@
 <div class="w-full mx-auto">
   <h2 class="text-3xl font-bold mb-6">Homes</h2>
 
-  <div class="mb-6 flex gap-4">
-    <!-- <input
-      type="text"
-      placeholder="Search Home By City|Title"
-      class="border p-2 rounded"
-      [(ngModel)]="searchTerm"
-      (keyup)="applySearch()"
-    /> -->
-    <input
-      type="text"
-      placeholder="Enter city"
-      class="border p-2 rounded"
-      [(ngModel)]="cityFilter"
-    />
-    <input
-      type="number"
-      placeholder="Number of rooms"
-      class="border p-2 rounded"
-      [(ngModel)]="roomsFilter"
-    />
-    <button
-      (click)="applyFilters()"
-      class="bg-blue-500 text-white px-4 py-2 rounded"
-    >
-      Filter
-    </button>
-  </div>
   @if (isLoading()) {
   <div class="flex justify-center items-center min-h-[200px]">
     <p class="text-gray-500">Loading homes...</p>
@@ -42,10 +15,9 @@
     <app-home-card [home]="home"></app-home-card>
     } @empty {
     <p class="text-gray-500 col-span-3 text-center py-12">
-      No homes found. Please check back later.
+      No homes found matching your criteria. Try adjusting your filters.
     </p>
     }
   </div>
   }
-  <app-pagination></app-pagination>
 </div>

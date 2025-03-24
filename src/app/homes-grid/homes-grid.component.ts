@@ -23,14 +23,6 @@ export class HomesGridComponent implements OnInit {
     this.homeService.fetchHomes();
   }
 
-  applyFilters(): void {
-    this.homeService.fetchHomes(
-      1,
-      6,
-      this.cityFilter,
-      this.roomsFilter || undefined
-    );
-  }
   // applySearch(): void {
   //   const term = this.searchTerm.toLowerCase();
   //   this.filteredHomes = this.homes().filter(
