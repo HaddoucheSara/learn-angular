@@ -1,13 +1,13 @@
 <div
-  class="h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300"
+  class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 h-full"
 >
-  <div class="h-48 overflow-hidden relative">
   <div class="h-48 overflow-hidden relative">
     <img
       [src]="home.picture"
       [alt]="home.title"
       class="w-full h-full object-cover"
     />
+    <!-- Favorite button -->
     <button
       (click)="onFavoriteClick()"
       class="absolute top-2 right-2 p-2 bg-opacity-80 rounded-full shadow-lg hover:bg-opacity-100 transition-all cursor-pointer"
